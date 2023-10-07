@@ -1,4 +1,5 @@
-<%--
+<%@ page import="kzbitlab.model.Item" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: Yera
   Date: 06.10.2023
@@ -19,18 +20,27 @@
 <%@include file="navbar.jsp" %>
 <div class="col-8 mx-auto">
     <h1 class="text-center">Welcome to BITLAB SHOP</h1>
-
     <h4 class="text-secondary text-center">Electronic devices with high quality and service</h4>
-
-    <div class="card">
-        <div class="card-header">
-            Featured
+    <div class="d-flex">
+        <%
+            List<Item> items = (List<Item>) request.getAttribute("items");
+            for (Item item : items) {
+                if (item!=null){
+        %>
+        <div class="card col-4 m-2">
+            <div class="card-header">
+                <%=item.getName()%>
+            </div>
+            <div class="card-body">
+                <h5><%=item.getPrice()%></h5>
+                <p><%=item.getDescription()%></p>
+                <a href="#" class="btn btn-primary">BUY NOW</a>
+            </div>
         </div>
-        <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
+        <%
+            }
+            }
+        %>
     </div>
 
 </div>

@@ -1,13 +1,14 @@
 package kzbitlab.model;
 
 public class User {
-  private Long id;
-  private String email;
-  private String password;
- private String fullName;
+    private Long id;
+    private String email;
+    private String password;
+    private String fullName;
 
 
- public User (){}
+    public User() {
+    }
 
     public User(Long id, String email, String password, String fullName) {
         this.id = id;
