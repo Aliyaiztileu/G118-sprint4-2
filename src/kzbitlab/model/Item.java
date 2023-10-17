@@ -6,12 +6,25 @@ public class Item {
     private String description;
     private Double price;
 
+    private  City city;
+
+
     public Item(){}
-    public Item(Long id, String name, String description, Double price) {
+
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
+
+    public Item(Long id, String name, String description, Double price, City city) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
+        this.city = city;
     }
 
     public Long getId() {
